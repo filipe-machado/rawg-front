@@ -1,0 +1,56 @@
+@media screen and (min-width: $break-md) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .card {
+      cursor: pointer;
+      width: 17.5vw;
+      background: var(--background);
+      box-shadow:  var(--box-shadow);
+      border-radius: .5rem;
+      margin: 1rem 0;
+      padding: 1rem;
+
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      h3 {
+        text-shadow: 2px 2px 3px rgb(0 0 0 / 60%);
+      }
+
+      h3 {
+        margin: 0;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        margin: 0;
+      }
+
+      p {
+        font-size: .9rem;
+        margin: 0 0 .5rem;
+        overflow-wrap: anywhere;
+
+        span {
+          font-size: .75rem;
+          background-color: var(--text-color);
+          color: #6c6c6c;
+          border-radius: 1rem;
+          padding: 0 .3rem;
+          margin: .15rem;
+          white-space: nowrap;
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: .3rem;
+      }
+    }
+  }
+}

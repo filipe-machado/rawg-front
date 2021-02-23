@@ -1,0 +1,24 @@
+@media screen and (min-width: $break-sm) {
+  .container {
+    width: 90vw;
+    margin: auto;
+    text-align: -webkit-center;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: $break-md) {
+  .container {
+    width: 67vw;
+  }
+}
+
+.loading {
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999999;
+  position: absolute;
+  top: 0;
+}

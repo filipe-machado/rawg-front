@@ -1,0 +1,26 @@
+html {
+  background: var(--background);
+}
+
+@media screen and (min-width: $break-sm) {
+  .apresentacao {
+  }
+}
+
+@media screen and (min-width: $break-md) {
+  .apresentacao {
+    border-radius: 50px;
+    background: var(--background);
+    box-shadow:  var(--box-shadow);
+    margin: 3rem;
+    border-radius: 1.5rem;
+    min-width: 90vw;
+    min-height: 90vh;
+
+    h1 {
+      display: inline-block;
+      color: var(--text-color);
+      margin: 2.5rem;
+    }
+  }
+}
