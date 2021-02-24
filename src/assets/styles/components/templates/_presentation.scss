@@ -9,18 +9,93 @@ html {
 
 @media screen and (min-width: $break-md) {
   .apresentacao {
-    border-radius: 50px;
-    background: var(--background);
     box-shadow:  var(--box-shadow);
     margin: 3rem;
     border-radius: 1.5rem;
     min-width: 90vw;
     min-height: 90vh;
+    overflow: hidden;
 
     h1 {
       display: inline-block;
       color: var(--text-color);
       margin: 2.5rem;
+    }
+
+    .backdrop {
+      background: var(--background);
+      border-radius: 1.5rem;
+      min-width: 90vw;
+      min-height: 90vh;
+      overflow: hidden;
+      backdrop-filter: blur(1px) opacity(0.5);
+      opacity: .7;
+      color: var(--text-color);
+      padding: 3rem;
+
+      .back {
+        position: absolute;
+        float: right;
+        right: 10rem;
+        top: 3rem;
+        background: rgba(#fff, .75);
+        color: #060606;
+        padding: .5rem 1rem;
+        border-radius: 1rem;
+        text-decoration: none;
+      }
+
+      h1{
+        margin: inherit;
+      }
+      p {
+        max-width: 50%;
+        font-size: .9rem;
+        margin: 0 0 .5rem;
+        overflow-wrap: anywhere;
+
+        span {
+          font-size: .75rem;
+          background-color: var(--text-color);
+          color: #6c6c6c;
+          border-radius: 1rem;
+          padding: 0 .3rem;
+          margin: .15rem;
+          white-space: nowrap;
+        }
+      }
+
+      .metacritica {
+        border: 1px solid var(--text-color);
+        max-width: fit-content;
+        line-height: initial;
+        padding: .3rem;
+        border-radius: .2rem;
+      }
+
+      .bar {
+        width: 50vw;
+        display: flex;
+
+        div {
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .exceptional {
+          background-color: #3c4;
+        }
+        .recommended {
+          background-color: #34c;
+        }
+        .meh {
+          background-color: #C2AF00;
+        }
+        .skip {
+          background-color: #c43;
+        }
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ import Image from 'src/components/atoms/Image';
 import notfound1 from 'src/assets/images/notfound1.svg';
 import notfound2 from 'src/assets/images/notfound2.svg';
 import Title from 'src/components/atoms/Title';
-import Href from 'src/components/atoms/Href';
+import { Link } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
   const [image, setImage] = React.useState<string>();
@@ -26,7 +26,7 @@ const NotFound: React.FC = () => {
       <div>
         <Title type="h2" text="404" />
         <Image src={image as RequestInfo} />
-        <Href to="/" text="Voltar" />
+        <Link to="/">Voltar</Link>
       </div>
     </div>
   );

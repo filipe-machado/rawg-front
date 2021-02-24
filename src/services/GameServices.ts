@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios';
-import { RawResponse } from '../@types';
+import { RawResponse, GameProps } from '../@types';
 import HttpClient from '../api/HttpClient';
 
 export default class GameServices extends HttpClient {
@@ -13,7 +13,7 @@ export default class GameServices extends HttpClient {
     return this.classInstance;
   }
 
-  public getGames = (params = ''): AxiosPromise<RawResponse> => this.instance.get(`/games${params}`);
+  public getAllGames = (params: Record<string, unknown>): AxiosPromise<RawResponse> => this.instance.get('/games', { params });
 
-  public getDeveloperGame = (id: number): AxiosPromise<RawResponse> => this.instance.get(`/games${id}/development-team`);
+  public getGame = (id: string): AxiosPromise<GameProps> => this.instance.get(`/games/${id}`);
 }

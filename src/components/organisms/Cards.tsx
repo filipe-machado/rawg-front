@@ -11,7 +11,7 @@ const Cards: React.FC<CardsProps> = ({ cards }: CardsProps): React.ReactElement 
     {
       cards?.map((card) => (
         <Card
-          id={card.id as unknown as number}
+          id={card.id as unknown as string}
           background_image={card.background_image}
           name={card.name}
           genres={card.genres}

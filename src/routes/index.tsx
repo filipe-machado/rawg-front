@@ -4,8 +4,16 @@ import {
   Route,
   BrowserRouter,
   Redirect,
+  RouteComponentProps,
 } from 'react-router-dom';
+import Game from 'src/pages/Game';
 import NotFound from 'src/pages/NotFound';
+
+interface MatchParams {
+  game: string;
+}
+
+type MatchProps = RouteComponentProps<MatchParams>;
 
 // PAGES
 const Home = lazy(() => import('../pages/Home'));
@@ -19,9 +27,7 @@ const Routes = (): React.ReactElement => (
       <Route exact path="/home">
         <Home />
       </Route>
-      <Route exact path="/home/:game">
-        <Home />
-      </Route>
+      <Route exact path="/home/:game" render={({ match }: MatchProps) => (<Game game={match.params.game} />)} />
       <Route path="*">
         <NotFound />
       </Route>

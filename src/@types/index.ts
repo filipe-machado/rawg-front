@@ -6,12 +6,36 @@ interface RawResponse {
   user_platforms?: boolean;
 }
 
-interface HrefProps {
-  to: string;
-  text: string;
-  event?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+interface GameProps {
+  name: string;
+  background_image: string;
+  developers: Developer[];
+  platforms: Platform[];
+  rating: number;
+  ratings: Rating[];
+  esrb_rating: EsbrRating;
+  genres: GenreProps[];
+  metacritic: number;
+  description_raw: string;
 }
 
+interface Rating {
+  id: number;
+  title: string;
+  count: number;
+  percent: number;
+}
+interface EsbrRating {
+  id: number;
+  name: string;
+}
+interface Developer {
+  games_count: number;
+  id: number;
+  image_background: string;
+  name: string;
+  slug: string;
+}
 interface ImageProps {
   src: RequestInfo;
   classes?: string;
@@ -19,7 +43,7 @@ interface ImageProps {
 }
 
 interface CardProps {
-  id: number;
+  id: string;
   name: string;
   background_image: string;
   genres: GenreProps[];
@@ -34,6 +58,7 @@ interface GenreProps {
   id: number;
   name: string;
   slug: string;
+  image_background?: string | null;
 }
 
 interface Platform {
@@ -81,7 +106,6 @@ interface LayoutProps {
 }
 
 export type {
-  HrefProps,
   ImageProps,
   CardProps,
   CardsProps,
@@ -92,4 +116,5 @@ export type {
   NavbarProps,
   LayoutProps,
   RawResponse,
+  GameProps,
 };
