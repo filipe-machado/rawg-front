@@ -22,12 +22,9 @@ const Routes = (): React.ReactElement => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/">
-        <Redirect to="/home" />
-      </Route>
-      <Route exact path="/home">
         <Home />
       </Route>
-      <Route exact path="/home/:game" render={({ match }: MatchProps) => (<Game game={match.params.game} />)} />
+      <Route exact path="/:game" render={({ match }: MatchProps) => (<Game game={match.params.game} />)} />
       <Route path="*">
         <NotFound />
       </Route>

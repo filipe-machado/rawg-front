@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({
   platforms,
 }: CardProps) => (
   <div className="card">
-    <Link to={`/home/${id as unknown as string}`}>
+    <Link to={`/${id as unknown as string}`}>
 
       <Title type="h3" text={name} />
 
