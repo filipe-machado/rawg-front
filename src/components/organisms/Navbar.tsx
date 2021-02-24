@@ -1,11 +1,6 @@
 import React from 'react';
 
-// INTERFACES
-import { NavbarProps } from '../../@types';
-
-function Navbar({
-  logo,
-}: NavbarProps): React.ReactElement {
+function Navbar(): React.ReactElement {
   return (
     <div />
   );
