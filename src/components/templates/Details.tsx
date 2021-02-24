@@ -35,7 +35,7 @@ const Details: React.FC<DetailsProps> = ({ id }: DetailsProps): React.ReactEleme
       } catch (error) {
         toast.error('Jogo não encontrado');
         setTimeout(() => {
-          window.location.href = '/home';
+          window.location.href = '/';
         }, 5000);
       } finally {
         dispatch(dispatcher('LOADING', false));
