@@ -8,10 +8,9 @@ import Navbar from '../organisms/Navbar';
 
 const Layout: React.FC<LayoutProps> = ({
   children,
-  logo,
 }: LayoutProps) => (
   <main>
-    <Navbar logo={logo as string} />
+    <Navbar />
     {children}
   </main>
 );

@@ -102,7 +102,6 @@ interface NavbarProps {
 
 interface LayoutProps {
   children: React.ReactNode;
-  logo?: string;
 }
 
 export type {
