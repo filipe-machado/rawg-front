@@ -25,7 +25,7 @@ Com esta aplicação irei poder visualizar os diversas informações de jogos, c
 
 > divirta-se com as funcionalidades
 
-1. Na pasta do backend, executar os seguintes comandos:
+2. Na pasta do backend, executar os seguintes comandos:
 > yarn install
 
 > yarn server
