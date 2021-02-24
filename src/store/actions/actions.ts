@@ -24,12 +24,8 @@ class StateLoader {
   }
 
   public saveState(state: Record<string, unknown>): void {
-    try {
-      this.serializedState = JSON.stringify(state);
-      localStorage.setItem(this.env, this.serializedState);
-    } catch (err) {
-      console.log(err);
-    }
+    this.serializedState = JSON.stringify(state);
+    localStorage.setItem(this.env, this.serializedState);
   }
 
   private initializeState(): Record<string, unknown> {

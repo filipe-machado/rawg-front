@@ -8,8 +8,7 @@ const Image: React.FC<ImageProps> = ({ src, classes, alt }: ImageProps) => {
   React.useEffect(() => {
     (async function fetchImage() {
       await fetch(src)
-        .then((response) => setImage(response.url))
-        .catch((err) => console.log(err));
+        .then((response) => setImage(response.url));
     }());
   });
   return (
