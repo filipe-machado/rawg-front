@@ -3,7 +3,6 @@ import {
   Switch,
   Route,
   BrowserRouter,
-  Redirect,
   RouteComponentProps,
 } from 'react-router-dom';
 import Game from 'src/pages/Game';
