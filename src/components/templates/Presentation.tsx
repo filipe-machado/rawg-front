@@ -30,10 +30,7 @@ const Presentation: React.FC = () => {
         setCards(results);
         dispatch(dispatcher('HIDRATE', result.data));
       } catch (error) {
-        toast.error('Jogo não encontrado');
-        setTimeout(() => {
-          window.location.href = '/';
-        }, 5000);
+        toast.error('Houve um problema!');
       } finally {
         dispatch(dispatcher('LOADING', false));
       }
