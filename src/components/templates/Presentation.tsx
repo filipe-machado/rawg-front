@@ -43,7 +43,7 @@ const Presentation: React.FC = () => {
         dispatch(dispatcher('LOADING', false));
       }
     }());
-  }, [dispatch]);
+  }, [dispatch, state.results]);
   return (
     <div className="apresentacao">
       <Title type="h1" text="Populares em 2020" />
