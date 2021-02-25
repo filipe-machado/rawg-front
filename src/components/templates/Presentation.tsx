@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 // INTERFACES
@@ -18,17 +18,25 @@ const dispatcher = (type: string, payload: boolean | RawResponse) => ({
 
 const Presentation: React.FC = () => {
   const [cards, setCards] = useState<CardProps[]>([]);
+  const state = useSelector(
+    (store: Record<string, unknown>) => store.games as Record<string, CardProps[]>,
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     toast.configure();
     (async function getGames() {
       try {
         dispatch(dispatcher('LOADING', true));
-        const games = new GameServices();
-        const result = await games.getAllGames({ dates: '2020-01-01,2020-12-31', page_size: '12', ordering: '-added' });
-        const { results } = result.data;
-        setCards(results);
-        dispatch(dispatcher('HIDRATE', result.data));
+        // evitando nova requisição caso já tenha dados no storage
+        if (state.results.length > 0) {
+          setCards(state.results);
+        } else {
+          const games = new GameServices();
+          const result = await games.getAllGames({ dates: '2020-01-01,2020-12-31', page_size: '12', ordering: '-added' });
+          const { results } = result.data;
+          setCards(results);
+          dispatch(dispatcher('HIDRATE', result.data));
+        }
       } catch (error) {
         toast.error('Houve um problema!');
       } finally {
